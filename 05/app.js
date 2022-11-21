@@ -3,7 +3,6 @@ import React from 'react'
 import { createRoot } from 'react-dom/client';
 
 const root = createRoot(document.querySelector('#root'));
-
 const key = '2af55f842ab44d94ba475a7a4b9c0336'
 
 class AppWeather extends React.Component {
@@ -24,9 +23,9 @@ class AppWeather extends React.Component {
                 </div>
             )
         }
-
         return null
     }
+
     componentDidMount() {
         fetch(`https://api.weatherbit.io/v2.0/current?key=${key}&lat=${this.props.lat}&lon=${this.props.lng}`)
             .then(resp => {
@@ -40,7 +39,6 @@ class AppWeather extends React.Component {
                 this.setState({ data: object.data })
             })
     }
-
 }
 
 
